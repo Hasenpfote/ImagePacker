@@ -53,6 +53,7 @@ private slots:
 	void checkOutpuDirectory();
 	void checkOutpuFile();
 	void startPacking();
+	void openAboutDialog();
 private:
 	void updateCountLabel();
 	void updateStartPushButton();

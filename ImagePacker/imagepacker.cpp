@@ -1,5 +1,6 @@
 #include "imagepacker.h"
 #include "packerdialog.h"
+#include "aboutdialog.h"
 
 
 static QString getInputFilter(const QStringList& list){
@@ -243,8 +244,9 @@ void ImagePacker::startPacking(){
 	// ダイアログ起動
 	PackerDialog dialog(this);
 	dialog.setArgs(args);
-	int i = dialog.exec();
+	dialog.exec();
 #if 0
+	int i = dialog.exec();
 	switch(i){
 	case QDialog::Accepted:
 		break;
@@ -254,6 +256,15 @@ void ImagePacker::startPacking(){
 		break;		
 	}
 #endif
+}
+
+/**
+ * about dialog を開く
+ */
+void ImagePacker::openAboutDialog(){
+	// ダイアログ起動
+	AboutDialog dialog(this);
+	dialog.exec();
 }
 
 /**

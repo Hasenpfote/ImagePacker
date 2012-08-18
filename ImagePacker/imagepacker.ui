@@ -1095,6 +1095,22 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>actionAbout</sender>
+   <signal>triggered()</signal>
+   <receiver>ImagePackerClass</receiver>
+   <slot>openAboutDialog()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>380</x>
+     <y>279</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>addToList()</slot>
@@ -1108,6 +1124,7 @@
   <slot>startPacking()</slot>
   <slot>changeFormat(int)</slot>
   <slot>changeMode(int)</slot>
+  <slot>openAboutDialog()</slot>
  </slots>
  <buttongroups>
   <buttongroup name="modeButtonGroup"/>
