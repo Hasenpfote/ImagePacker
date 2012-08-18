@@ -1,0 +1,1116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ImagePackerClass</class>
+ <widget class="QMainWindow" name="ImagePackerClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>761</width>
+    <height>560</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>761</width>
+    <height>560</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>761</width>
+    <height>560</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>ImagePacker</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QGroupBox" name="inputGroupBox">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>4</y>
+      <width>411</width>
+      <height>441</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Input</string>
+    </property>
+    <widget class="QListWidget" name="listWidget">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>36</y>
+       <width>391</width>
+       <height>361</height>
+      </rect>
+     </property>
+     <property name="acceptDrops">
+      <bool>false</bool>
+     </property>
+     <property name="selectionMode">
+      <enum>QAbstractItemView::MultiSelection</enum>
+     </property>
+     <property name="sortingEnabled">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QWidget" name="layoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>162</x>
+       <y>402</y>
+       <width>239</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QPushButton" name="addPushButton">
+        <property name="text">
+         <string>Add</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="removePushButton">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>Remove</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="clearPushButton">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>Clear</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="layoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>13</x>
+       <y>16</y>
+       <width>220</width>
+       <height>14</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="QLabel" name="countLabel">
+        <property name="text">
+         <string>Total: 0 items</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="messageLabel">
+        <property name="palette">
+         <palette>
+          <active>
+           <colorrole role="WindowText">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>255</red>
+              <green>0</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </active>
+          <inactive>
+           <colorrole role="WindowText">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>255</red>
+              <green>0</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </inactive>
+          <disabled>
+           <colorrole role="WindowText">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>120</red>
+              <green>120</green>
+              <blue>120</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </disabled>
+         </palette>
+        </property>
+        <property name="text">
+         <string>* requires 1 or more items</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <zorder>layoutWidget</zorder>
+    <zorder>layoutWidget</zorder>
+    <zorder>listWidget</zorder>
+   </widget>
+   <widget class="QGroupBox" name="outputGroupBox">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>4</y>
+      <width>321</width>
+      <height>491</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Output</string>
+    </property>
+    <widget class="QGroupBox" name="packerOptionGroupBox">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>369</y>
+       <width>301</width>
+       <height>111</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Packer option</string>
+     </property>
+     <widget class="QGroupBox" name="paddingGroupBox">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>19</y>
+        <width>281</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Input the value between 0(lowest) and 10(highest). default = 0</string>
+      </property>
+      <property name="title">
+       <string>Padding pixel</string>
+      </property>
+      <widget class="QSlider" name="paddingHorizontalSlider">
+       <property name="geometry">
+        <rect>
+         <x>21</x>
+         <y>20</y>
+         <width>191</width>
+         <height>19</height>
+        </rect>
+       </property>
+       <property name="maximum">
+        <number>10</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+      <widget class="QSpinBox" name="paddingSpinBox">
+       <property name="geometry">
+        <rect>
+         <x>219</x>
+         <y>17</y>
+         <width>42</width>
+         <height>22</height>
+        </rect>
+       </property>
+       <property name="maximum">
+        <number>10</number>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QCheckBox" name="alignCheckBox">
+      <property name="geometry">
+       <rect>
+        <x>14</x>
+        <y>78</y>
+        <width>121</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Align 2^n boundary</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="fileSettingsGroupBox">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>69</y>
+       <width>301</width>
+       <height>291</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>File settings</string>
+     </property>
+     <widget class="QGroupBox" name="formatGroupBox">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>66</y>
+        <width>281</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Format</string>
+      </property>
+      <widget class="QRadioButton" name="bmpRadioButton">
+       <property name="geometry">
+        <rect>
+         <x>13</x>
+         <y>19</y>
+         <width>41</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>bmp</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string>formatButtonGroup</string>
+       </attribute>
+      </widget>
+      <widget class="QRadioButton" name="dibRadioButton">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>63</x>
+         <y>19</y>
+         <width>41</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>dib</string>
+       </property>
+       <attribute name="buttonGroup">
+        <string>formatButtonGroup</string>
+       </attribute>
+      </widget>
+      <widget class="QRadioButton" name="jp2RadioButton">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>163</x>
+         <y>20</y>
+         <width>41</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>jp2</string>
+       </property>
+       <attribute name="buttonGroup">
+        <string>formatButtonGroup</string>
+       </attribute>
+      </widget>
+      <widget class="QRadioButton" name="jpgRadioButton">
+       <property name="geometry">
+        <rect>
+         <x>113</x>
+         <y>20</y>
+         <width>41</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>jpg</string>
+       </property>
+       <attribute name="buttonGroup">
+        <string>formatButtonGroup</string>
+       </attribute>
+      </widget>
+      <widget class="QRadioButton" name="pngRadioButton">
+       <property name="geometry">
+        <rect>
+         <x>213</x>
+         <y>20</y>
+         <width>41</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>png</string>
+       </property>
+       <attribute name="buttonGroup">
+        <string>formatButtonGroup</string>
+       </attribute>
+      </widget>
+      <widget class="QRadioButton" name="pgmRadioButton">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>63</x>
+         <y>40</y>
+         <width>41</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>pgm</string>
+       </property>
+       <attribute name="buttonGroup">
+        <string>formatButtonGroup</string>
+       </attribute>
+      </widget>
+      <widget class="QRadioButton" name="rasRadioButton">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>163</x>
+         <y>41</y>
+         <width>41</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>ras</string>
+       </property>
+       <attribute name="buttonGroup">
+        <string>formatButtonGroup</string>
+       </attribute>
+      </widget>
+      <widget class="QRadioButton" name="pbmRadioButton">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>13</x>
+         <y>40</y>
+         <width>41</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>pbm</string>
+       </property>
+       <attribute name="buttonGroup">
+        <string>formatButtonGroup</string>
+       </attribute>
+      </widget>
+      <widget class="QRadioButton" name="tiffRadioButton">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>213</x>
+         <y>41</y>
+         <width>41</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>tiff</string>
+       </property>
+       <attribute name="buttonGroup">
+        <string>formatButtonGroup</string>
+       </attribute>
+      </widget>
+      <widget class="QRadioButton" name="ppmRadioButton">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>113</x>
+         <y>41</y>
+         <width>41</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>ppm</string>
+       </property>
+       <attribute name="buttonGroup">
+        <string>formatButtonGroup</string>
+       </attribute>
+      </widget>
+     </widget>
+     <widget class="QLabel" name="label_2">
+      <property name="geometry">
+       <rect>
+        <x>9</x>
+        <y>42</y>
+        <width>41</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>File</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="dirPushButton">
+      <property name="geometry">
+       <rect>
+        <x>250</x>
+        <y>18</y>
+        <width>21</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>...</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>9</x>
+        <y>21</y>
+        <width>41</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Dir</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="dirLineEdit">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>19</y>
+        <width>211</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="fileLineEdit">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>40</y>
+        <width>211</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QGroupBox" name="formatOptionGroupBox">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>140</y>
+        <width>281</width>
+        <height>141</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Format option</string>
+      </property>
+      <widget class="QGroupBox" name="jpegQualityGroupBox">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>19</y>
+         <width>261</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>Input the value between 0(lowest) and 100(highest). default = 95</string>
+       </property>
+       <property name="title">
+        <string>Jpeg quality</string>
+       </property>
+       <widget class="QSlider" name="jpegQualityHorizontalSlider">
+        <property name="geometry">
+         <rect>
+          <x>12</x>
+          <y>17</y>
+          <width>191</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="toolTip">
+         <string/>
+        </property>
+        <property name="maximum">
+         <number>100</number>
+        </property>
+        <property name="value">
+         <number>95</number>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="jpegQualitySpinBox">
+        <property name="geometry">
+         <rect>
+          <x>210</x>
+          <y>14</y>
+          <width>42</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="maximum">
+         <number>100</number>
+        </property>
+        <property name="value">
+         <number>95</number>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QGroupBox" name="pngCompressionGroupBox">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>69</y>
+         <width>261</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>Input the value between 0(lowest) and 9(highest). default = 3</string>
+       </property>
+       <property name="title">
+        <string>Png compression</string>
+       </property>
+       <widget class="QSlider" name="pngCompressionHorizontalSlider">
+        <property name="geometry">
+         <rect>
+          <x>12</x>
+          <y>17</y>
+          <width>191</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="maximum">
+         <number>9</number>
+        </property>
+        <property name="value">
+         <number>3</number>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="pngCompressionSpinBox">
+        <property name="geometry">
+         <rect>
+          <x>210</x>
+          <y>14</y>
+          <width>42</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="maximum">
+         <number>9</number>
+        </property>
+        <property name="value">
+         <number>3</number>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QCheckBox" name="pxmBinaryCheckBox">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>13</x>
+         <y>118</y>
+         <width>75</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Pxm binary</string>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="modeGroupBox">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>19</y>
+       <width>301</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Mode</string>
+     </property>
+     <widget class="QRadioButton" name="writeOnlyRadioButton">
+      <property name="geometry">
+       <rect>
+        <x>14</x>
+        <y>17</y>
+        <width>81</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Write only</string>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+      <attribute name="buttonGroup">
+       <string>modeButtonGroup</string>
+      </attribute>
+     </widget>
+     <widget class="QRadioButton" name="displayOnlyRadioButton">
+      <property name="geometry">
+       <rect>
+        <x>91</x>
+        <y>17</y>
+        <width>86</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Display only</string>
+      </property>
+      <attribute name="buttonGroup">
+       <string>modeButtonGroup</string>
+      </attribute>
+     </widget>
+     <widget class="QRadioButton" name="bothRadioButton">
+      <property name="geometry">
+       <rect>
+        <x>180</x>
+        <y>17</y>
+        <width>51</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Both</string>
+      </property>
+      <attribute name="buttonGroup">
+       <string>modeButtonGroup</string>
+      </attribute>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QPushButton" name="startPushButton">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>451</y>
+      <width>391</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Start</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>761</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionHelp"/>
+    <addaction name="actionAbout"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionExit">
+   <property name="text">
+    <string>Exit</string>
+   </property>
+  </action>
+  <action name="actionHelp">
+   <property name="text">
+    <string>Help</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="text">
+    <string>About</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="imagepacker.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>jpegQualityHorizontalSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>jpegQualitySpinBox</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>612</x>
+     <y>303</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>685</x>
+     <y>303</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>jpegQualitySpinBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>jpegQualityHorizontalSlider</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>679</x>
+     <y>303</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>537</x>
+     <y>303</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pngCompressionHorizontalSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>pngCompressionSpinBox</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>628</x>
+     <y>353</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>683</x>
+     <y>353</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pngCompressionSpinBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>pngCompressionHorizontalSlider</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>684</x>
+     <y>353</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>552</x>
+     <y>353</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>paddingHorizontalSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>paddingSpinBox</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>605</x>
+     <y>466</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>679</x>
+     <y>466</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>paddingSpinBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>paddingHorizontalSlider</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>682</x>
+     <y>466</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>546</x>
+     <y>466</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>addPushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ImagePackerClass</receiver>
+   <slot>addToList()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>208</x>
+     <y>465</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>25</x>
+     <y>509</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>removePushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ImagePackerClass</receiver>
+   <slot>removeFromList()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>328</x>
+     <y>465</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>69</x>
+     <y>524</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>clearPushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ImagePackerClass</receiver>
+   <slot>clearList()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>409</x>
+     <y>465</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>99</x>
+     <y>539</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>listWidget</sender>
+   <signal>clicked(QModelIndex)</signal>
+   <receiver>ImagePackerClass</receiver>
+   <slot>clickedListItem()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>151</x>
+     <y>362</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>152</x>
+     <y>555</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>dirPushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ImagePackerClass</receiver>
+   <slot>chooseOutputDirectory()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>706</x>
+     <y>149</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>759</x>
+     <y>72</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>startPushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ImagePackerClass</receiver>
+   <slot>start()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>390</x>
+     <y>527</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>390</x>
+     <y>522</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>formatButtonGroup</sender>
+   <signal>buttonClicked(int)</signal>
+   <receiver>ImagePackerClass</receiver>
+   <slot>changeFormat(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>505</x>
+     <y>314</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>dirLineEdit</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>ImagePackerClass</receiver>
+   <slot>checkOutpuDirectory()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>593</x>
+     <y>148</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>759</x>
+     <y>114</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>fileLineEdit</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>ImagePackerClass</receiver>
+   <slot>checkOutpuFile()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>526</x>
+     <y>169</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>759</x>
+     <y>138</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>startPushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ImagePackerClass</receiver>
+   <slot>startPacking()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>321</x>
+     <y>527</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>321</x>
+     <y>559</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionExit</sender>
+   <signal>triggered()</signal>
+   <receiver>ImagePackerClass</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>380</x>
+     <y>263</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>modeButtonGroup</sender>
+   <signal>buttonClicked(int)</signal>
+   <receiver>ImagePackerClass</receiver>
+   <slot>changeMode(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>380</x>
+     <y>279</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>addToList()</slot>
+  <slot>removeFromList()</slot>
+  <slot>clearList()</slot>
+  <slot>clickedListItem()</slot>
+  <slot>chooseOutputDirectory()</slot>
+  <slot>start()</slot>
+  <slot>checkOutpuDirectory()</slot>
+  <slot>checkOutpuFile()</slot>
+  <slot>startPacking()</slot>
+  <slot>changeFormat(int)</slot>
+  <slot>changeMode(int)</slot>
+ </slots>
+ <buttongroups>
+  <buttongroup name="modeButtonGroup"/>
+  <buttongroup name="formatButtonGroup"/>
+ </buttongroups>
+</ui>
