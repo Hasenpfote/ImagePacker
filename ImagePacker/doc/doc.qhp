@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<QtHelpProject version="1.0">
+	<namespace>ImagePacker_Document</namespace>
+	<virtualFolder>doc</virtualFolder>
+	<filterSection>
+		<toc>
+			<section title="Image Packer Document" ref="index.xhtml">
+				<section title="動作環境" ref="system_requirements.xhtml"/>
+				<section title="ファイル説明" ref="files_description.xhtml"/>
+				<section title="インストール/アンインストール" ref="install_uninstall.xhtml"/>
+				<section title="使い方" ref="how_to_use.xhtml"/>
+				<section title="リリースノート" ref="release_note.xhtml"/>
+			</section>
+		</toc>
+		<keywords>
+		</keywords>
+		<files>
+			<file>index.xhtml</file>
+			<file>system_requirements.xhtml</file>
+			<file>files_description.xhtml</file>
+			<file>install_uninstall.xhtml</file>
+			<file>how_to_use.xhtml</file>
+			<file>release_note.xhtml</file>
+			<file>main_window.png</file>
+		</files>
+	</filterSection>
+</QtHelpProject>

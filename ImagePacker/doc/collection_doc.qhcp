@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<QHelpCollectionProject version="1.0">
+	<assistant>
+		<title>Image Packer Document</title>
+		<title language="ja">Image Packer ドキュメント</title>
+		<startPage>qthelp://ImagePacker_Document/doc/doc1.html</startPage>
+		<currentFilter>Image Packer Document 1.0</currentFilter>
+		<enableFilterFunctionality>true</enableFilterFunctionality>
+		<enableDocumentationManager>true</enableDocumentationManager>
+		<enableAddressBar visible="true">true</enableAddressBar>
+		<aboutMenuText>
+			<text>Image Packer Document</text>
+			<text language="ja">Image Packer ドキュメント</text>
+		</aboutMenuText>
+	</assistant>
+	<docFiles>
+		<generate>
+			<file>
+				<input>doc.qhp</input>
+				<output>doc.qch</output>
+			</file>
+		</generate>
+		<register>
+			<file>doc.qch</file>
+		</register>
+	</docFiles>
+</QHelpCollectionProject>
