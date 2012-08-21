@@ -6,6 +6,7 @@
 #include <QtGui/QMessageBox>
 #include <QtGui/QDropEvent>
 #include <QtCore/QUrl>
+#include <QtCore/QProcess>
 #include "ui_imagepacker.h"
 
 
@@ -54,6 +55,8 @@ private slots:
 	void checkOutpuFile();
 	void startPacking();
 	void openAboutDialog();
+	void openHelp();
+	void closeHelp(int exitCode, QProcess::ExitStatus exitStatus);
 private:
 	void updateCountLabel();
 	void updateStartPushButton();
@@ -69,6 +72,7 @@ private:
 	QString workingDirectory;
 	QColor dirLineEditBase;
 	QColor fileLineEditBase;
+	QProcess proc;	// for help(Qt assistant)
 };
 
 #endif // IMAGEPACKER_H

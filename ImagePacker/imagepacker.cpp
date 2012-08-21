@@ -13,7 +13,9 @@ static QString getInputFilter(const QStringList& list){
 
 ImagePacker::ImagePacker(QWidget *parent, Qt::WFlags flags) : QMainWindow(parent, flags){
 	ui.setupUi(this);
-	setAcceptDrops(true); // http://www.mail-archive.com/interest@qt-project.org/msg00538.html
+	setAcceptDrops(true); // see also http://www.mail-archive.com/interest@qt-project.org/msg00538.html
+
+	QObject::connect(&proc, SIGNAL(finished(int, QProcess::ExitStatus)), this, SLOT(closeHelp(int, QProcess::ExitStatus)));
 
 	inputFormats << "bmp" << "jpg" << "png";
 	outputFormats << "bmp" << "jpg" << "png";
@@ -265,6 +267,24 @@ void ImagePacker::openAboutDialog(){
 	// ダイアログ起動
 	AboutDialog dialog(this);
 	dialog.exec();
+}
+
+/**
+ * Help(Qt assistant)を起動
+ */
+void ImagePacker::openHelp(){
+
+	QStringList args;
+	args << "-collectionFile"
+		 << (QDir::currentPath() + "/doc/collection_doc.qhc")
+		 << "-enableRemoteControl";
+	proc.start("assistant", args);
+}
+
+/**
+ * Help(Qt assistant)の終了
+ */
+void ImagePacker::closeHelp(int exitCode, QProcess::ExitStatus exitStatus){
 }
 
 /**

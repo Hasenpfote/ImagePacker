@@ -24,7 +24,11 @@ void PackerDialog::reject(){
 void PackerDialog::showEvent(QShowEvent* e){
 	QDialog::showEvent(e);
 	// ToDo: 試験的に絶対パスで指定しているが最終的には直下に
+#if 1
 	proc.start("E:\\GitHubRepository\\2dpacker\\debug\\2dpacker.exe", args);
+#else
+	proc.start("2dpacker.exe", args);
+#endif
 }
 
 /**
